@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wino.sqlite" version="1.1.0" android-versionCode="7" ios-CFBundleVersion="1.1.0" xmlns="http://www.w3.org/ns/widgets">
-    <name>sqlite</name>
+<widget id="com.wino.push" version="1.1.0" android-versionCode="7" ios-CFBundleVersion="1.1.0" xmlns="http://www.w3.org/ns/widgets">
+    <name>
+	push 
+	</name>
     <description>
-        sqlite
+       push
     </description>
-    <author email="zizwar@gmail.com" href="https://wino.ws">
+    <author email="wino@winoscript.com" href="https://ksu.edu.sa">
         Ibrahim BIDI
     </author>
     <access origin="*" />
-    <plugin name="cordova-plugin-dialogs" />
-      <plugin name="cordova-plugin-vibration" />
-			<plugin name="cordova-plugin-file" />
-	<plugin name="cordova-plugin-file-transfer"/>
-		<plugin name="cordova-sqlite-storage" />
-		
-
+	<plugin name="cordova-plugin-media" />
+	<plugin name="cordova-plugin-file"/>
+	   <plugin name="cordova-plugin-vibration" />
+       <plugin name="https://github.com/katzer/cordova-plugin-local-notifications.git" />
+	    <plugin name="cordova-plugin-network-information" spec="1.2.1" />
 		<platform name="android">
     <icon src="res/android/mipmap-ldpi/ic_launcher.png" density="ldpi" />
     <icon src="res/android/mipmap-mdpi/ic_launcher.png" density="mdpi" />
