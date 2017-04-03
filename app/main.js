@@ -7,8 +7,6 @@ var page = new tabris.Page({
         background: "#000"
     }).open();
 //
-var rez;
-  var db = window.sqlitePlugin.openDatabase({name: './app/ayat.db', location: 'default'});
 //
      var text = new tabris.TextView({
             font: "bold 26px",
@@ -20,36 +18,23 @@ var rez;
                 left: 20,
              
             },
-            text: "download file"
+            text: "push file"
         }).on("tap", function(w, e) {
-		//	console.debug("fnc unzip file")
-				window.plugins.toast.showShortCenter("start")
-	  db.transaction(function(tx) {
-    tx.executeSql('SELECT *, text FROM ayat', [], function(tx, rs) {
-      console.log('Record count (expected to be 2): ' + rs.rows.item(0).text);
-	    rez.set("text","res="+rs.rows.item(0));
-	    window.plugins.toast.showShortCenter("res = "+rs.rows.item(0).text)
-	    
-    }, function(tx, error) {
-      window.plugins.toast.showShortCenter('SELECT error: ' + error.message);
-	    rez.set("text","errrrrrrrr");
-    });
-  });
-	    // var db = new sqlite3.Database();
-	   //  SELECT *, text FROM ayat
-	     
-        }).appendTo(page);
-rez = new tabris.TextView({
-            font: "bold 12px",
-            textColor: "#fff",
-          
-            centerX: 0,
-            layoutData: {
-                top: 100,
-                left: 20,
-             
-            },
-            text: "result here"
-        }).appendTo(page);
+
+      //  scheduleDelayed = function () {
+                var now = new Date().getTime(),
+                    _5_sec_from_now = new Date(now + 5 * 1000);
+                var sound = "http://quran.ksu.edu.sa/ayat/mp3/Hudhaify_64kbps/001001.mp3";//device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+                cordova.plugins.notification.local.schedule({
+                    id: 1,
+                    title: 'Scheduled with delay',
+                    text: 'Test Message 1',
+                    at: _5_sec_from_now,
+                    sound: sound,
+                    badge: 12
+                });
+           // };
+  }).appendTo(page);
+
         //
     //
